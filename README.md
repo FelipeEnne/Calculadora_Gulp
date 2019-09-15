@@ -17,4 +17,8 @@
 	gulp-cssimport gulp-rename gulp-sass node-sass
 	gulp-uglify gulp-uglifycss
 
-
+15/09/2019
+* Criando o arquivo gulp;
+* Importando os plugins;
+* Criando a função html, js e css no gulpfile.js;
+* Criando as pasta template, js e css
