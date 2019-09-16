@@ -9,7 +9,7 @@ const cssimport = require('gulp-cssimport');
 
 function html() {
 	return src('src/templates/*.html')
-		.pipe(dest'public/')
+		.pipe(dest('public/'));
 }
 
 function javascript() {
@@ -19,7 +19,7 @@ function javascript() {
 		}))
 		.pipe(minifyJS())
 		.pipe(rename({extname:'.min.js'}))
-		.pipe(dest'public/assest/js/')
+		.pipe(dest('public/assets/js/'));
 }
 
 
@@ -28,8 +28,8 @@ function css() {
 		.pipe(cssimport())
 		.pipe(sass())
 		.pipe(minifyCSS())
-		.pipe(rename({extname:'.min.js'}))
-		.pipe(dest'public/assest/css/')
+		.pipe(rename({extname:'.min.css'}))
+		.pipe(dest('public/assets/css/'));
 }
 
-exports.default = parallel(javascript, css);
+exports.default = parallel(html, javascript, css);
