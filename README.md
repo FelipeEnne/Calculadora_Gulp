@@ -26,3 +26,6 @@
 16/09/2019
 * Arrumando o arquivo gulp;
 * Criando arquivos .css;
+
+17/09/2019
+* Criando a calculadora de somar no html e css.
