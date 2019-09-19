@@ -29,3 +29,6 @@
 
 17/09/2019
 * Criando a calculadora de somar no html e css.
+
+18/09/2019
+* Criando a calculadora de somar no js.

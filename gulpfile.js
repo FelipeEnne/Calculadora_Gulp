@@ -15,8 +15,8 @@ function html() {
 function javascript() {
 	return src('src/js/*.js')
 		.pipe(babel({
-			presets:[ '@babel/env ']
-		}))
+            "presets": ["@babel/preset-env"]
+        }))
 		.pipe(minifyJS())
 		.pipe(rename({extname:'.min.js'}))
 		.pipe(dest('public/assets/js/'));
