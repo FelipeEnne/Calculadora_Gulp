@@ -1,34 +1,61 @@
-# Criando uma calculadora usando o gulp
+# Calculadora Gulp
 
-### Projeto do Curso B7Web
+Calculadora de soma simples com pipeline de build em Gulp. Projeto do curso B7Web, com depend?ncias atualizadas para eliminar vulnerabilidades conhecidas.
 
-## Descrição
-### Uma calculadora
+## Pr?-requisitos
 
+- [Node.js](https://nodejs.org/) LTS
 
+## Instala??o
 
+```bash
+npm install
+```
 
-14/09/2019
-* Iniciando o nmp;
-* Criando as pastas e arquivos;
-* Arquivo de configuração do gulp;
-* Instalando os pacotes: 
-	gulp gulp-babel @babel/core @babel/preset-env 
-	gulp-cssimport gulp-rename gulp-sass node-sass
-	gulp-uglify gulp-uglifycss.
+## Build
 
-15/09/2019
-* Criando o arquivo gulp;
-* Importando os plugins;
-* Criando a função html, js e css no gulpfile.js;
-* Criando as pasta template, js e css.
+Gera os arquivos otimizados em `public/`:
 
-16/09/2019
-* Arrumando o arquivo gulp;
-* Criando arquivos .css;
+```bash
+npm run build
+```
 
-17/09/2019
-* Criando a calculadora de somar no html e css.
+Ou, de forma equivalente:
 
-18/09/2019
-* Criando a calculadora de somar no js.
+```bash
+npx gulp
+```
+
+O build:
+
+1. Copia os templates HTML de `src/templates/` para `public/`
+2. Transpila o JavaScript com Babel, minifica e salva em `public/assets/js/`
+3. Resolve imports de CSS, processa com Sass, minifica e salva em `public/assets/css/`
+
+Depois do build, abra `public/index.html` no navegador para usar a calculadora.
+
+## Estrutura do projeto
+
+```
+src/
+  css/          # Estilos de origem
+  js/           # Scripts de origem
+  templates/    # P?ginas HTML
+public/         # Sa?da do build (gerada, ignorada pelo Git)
+gulpfile.js     # Tasks do Gulp
+package.json
+.gitignore
+```
+
+## Stack
+
+- **Gulp 5** — orquestra??o do build
+- **Babel** (`@babel/preset-env`) — transpila??o de JavaScript
+- **Sass** (Dart Sass via `gulp-sass`) — processamento de CSS
+- **gulp-uglify** / **gulp-uglifycss** — minifica??o
+- **gulp-cssimport** — resolu??o de `@import` em CSS
+- **gulp-rename** — renomea??o dos arquivos minificados
+
+## Seguran?a
+
+As depend?ncias foram modernizadas (incluindo a troca de `node-sass` por `sass` e a atualiza??o do Gulp e do Babel) para que `npm audit` reporte **0 vulnerabilidades**.
